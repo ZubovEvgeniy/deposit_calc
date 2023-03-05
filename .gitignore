@@ -130,3 +130,8 @@ dmypy.json
 
 # Other
 .vscode/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover 
