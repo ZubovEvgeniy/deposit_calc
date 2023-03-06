@@ -11,7 +11,7 @@ from .serializers import DepositSerializer
 class DepositView(View):
     def post(self, request, *args, **kwargs):
         serializer = DepositSerializer(data=json.loads(request.body))
-        if not serializer.is_valid(raise_exception=True):
+        if not serializer.is_valid(raise_exception=False):
             return HttpResponse(
                 serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST,
