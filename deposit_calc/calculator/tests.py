@@ -32,11 +32,10 @@ class DepositTest(TestCase):
         response = DepositView.as_view()(request)
 
         self.assertEqual(response.status_code, 400)
-
         self.assertEqual(
             response.content,
             b"dateperiodsamountrate",
-            "Empty request"
+            "Empty request",
         )
 
     def test_incomplete_request(self):
@@ -51,11 +50,10 @@ class DepositTest(TestCase):
         response = DepositView.as_view()(request)
 
         self.assertEqual(response.status_code, 400)
-
         self.assertEqual(
             response.content,
             b"periods",
-            "Incomplete request"
+            "Incomplete request",
         )
 
     def test_unvalid_request(self):
@@ -70,9 +68,8 @@ class DepositTest(TestCase):
         response = DepositView.as_view()(request)
 
         self.assertEqual(response.status_code, 400)
-
         self.assertEqual(
             response.content,
             b"date",
-            "unvalid request"
+            "Unvalid request",
         )
